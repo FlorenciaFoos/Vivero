@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Vivero Tallo Verde</title>
+  <link rel="icon" href="{% static 'img/favicon-flower.png' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="{% url 'home' %}">Tallo Verde</a>
+      <button type="button" class="navbar-toggler" aria-controls="menu" aria-expanded="false"
+        aria-label="toggle navigacion" data-target="#menu" data-toggle="collapse"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="menu">
+        <ul class="navbar-nav">
+          <li class="nav-item"> <a href="{% url 'home' %}" class="nav-link">Home</a></li>
+          <li class="nav-item"> <a href="#" class="nav-link">Explorar</a></li>
+          <li class="nav-item"> <a href="{% url 'nosotros' %}" class="nav-link">Nosotros</a></li>
+          <li class="nav-item"> <a href="{% url 'contact' %}" class="nav-link">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="container-fluid text-center">
+      <div class="row d-flex justify-content-center contact">
+        <div class="col-md-6 my-5 py-lg-5 text-box">
+          <h1>Conocé todas las variedades que tenemos</h1>
+          <p class="lead">Plantas, flores, semillas</p>
+          <a class="btn btn-info btn-explorar" href="#">Explorar</a>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main>
+    <div class="text-center p-3">
+
+      <h2 class="my-4 ">Contacto</h2>
+      <p class="lead">Envíanos tu consulta o sugerencia y te responderemos a la brevedad</p>
+      {% if message_name %}
+      <p class="message">Gracias {{message_name}}. Tu mensaje ha sido enviado!</p>
+      {% endif %}
+    </div>
+
+    <form class="container my-5" action="{% url 'contact' %}" method="POST">
+      {% csrf_token %}
+
+
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control" required name='name' placeholder="Ingresá tu nombre">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" required name='email' placeholder="Ingresá tu email">
+      </div>
+      <div class="form-group">
+        <label for="tema">Categoría de tu mensaje</label>
+        <select class="form-control" id="tema" required name='category'>
+          <option value="Selecciona uno"> Selecciona uno </option>
+          <option value="Envíos">Envíos</option>
+
+          <option value="Stock">Stock</option>
+
+          <option value="Compras">Compras</option>
+          <option value="Sugerencia">Sugerencia</option>
+          <option value="Otros">Otros</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Consulta</label>
+        <textarea type="mensaje" name='message' required class="form-control" id="mensaje" rows="5"> </textarea>
+      </div>
+      <button type="submit" class="btn btn-info">Enviar</button>
+
+
+    </form>
+
+
+
+  </main>
+
+
+
+  <footer class="footer">
+    <ul class="container footer-list ">
+      <li class="footer-list-item">Ayuda</li>
+
+      <li class="footer-list-item">Términos y condiciones</li>
+
+    </ul>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
