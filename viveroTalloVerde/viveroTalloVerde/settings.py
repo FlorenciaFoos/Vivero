@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+import django_heroku
+import dj_database_url
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -120,12 +122,12 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+ 
 
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'website/static/'),
-
-)
+STATICFILES_DIRS = ( 
+    os.path.join(BASE_DIR,'website/static/'),
+    
+    )
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # send email config
 EMAIL_HOST = 'smtp.gmail.com'
@@ -133,3 +135,6 @@ EMAIL_HOST_USER = 'florenciafoos212@gmail.com'
 EMAIL_HOST_PASSWORD = 'Maria1990'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+django_heroku.settings(locals())
