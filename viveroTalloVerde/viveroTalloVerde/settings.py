@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'viveroTalloVerde.urls'
@@ -128,7 +129,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'website/static/'),
     
     )
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_STORAGE= 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # send email config
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'florenciafoos212@gmail.com'
