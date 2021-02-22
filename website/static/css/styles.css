@@ -1,6 +1,15 @@
+
+ 
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+ 
 .header{
     background-image: url(../img/fondo-header.jpg);
     background-position: center;
+}
+
+.navbar-brand{
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
 }
 
 .btn-info, .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-primary{
@@ -72,4 +81,10 @@ label{
     background-image: url(../img/fondo-nosotros.jpg);
     background-position: center;
     background-size: cover;
+}
+
+a, a:hover, a:focus{
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
 }
