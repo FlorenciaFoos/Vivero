@@ -8,6 +8,7 @@ from django.db import models
 class Categoria(models.Model):
     CategoriaId = models.AutoField(primary_key = True, verbose_name = 'ID')
     CategoriaNombre = models.CharField(max_length=200 , verbose_name = 'Nombre de categoría', unique = True)
+    CategoriaImagen =  models.ImageField(upload_to ='uploads/',default = 'uploads/None/no-img.jpg,',verbose_name = 'Imagen') 
     def __str__(self):
         """
         String que representa al objeto Categoria

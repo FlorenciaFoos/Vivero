@@ -2,6 +2,23 @@
  
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
  
+ :root{
+    --content-width: 80vw;
+    --gutter: 40px;
+    --columns: 3;
+    --row-size: calc(
+      ( var(--content-width) - (var(--gutter) * (var(--columns) - 1))
+      ) / var(--columns)
+    );
+    
+ }
+    
+    
+    
+ 
+  
+
+
 .header{
     background-image: url(../img/fondo-header.jpg);
     background-position: center;
@@ -99,7 +116,30 @@ a, a:hover, a:focus{
 
 
 .grilla{
+    
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
+  
+    margin: 6rem;
+    max-width: var(--content-width);
+    
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-auto-rows: var(--row-size);
+  
+    grid-column-gap: var(--gutter);
+    grid-row-gap: var(--gutter);
+}
+
+ 
+
+ 
+
+.item-container{
+border: 1px solid black;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.item-title{
+    font-size: 1.50rem;
 }
