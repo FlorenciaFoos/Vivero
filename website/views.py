@@ -11,11 +11,12 @@ def contact(request):
          message_email = request.POST['email']
          message = request.POST['message']
          category = request.POST['category']
-         print('########################################',message_email)
+      
          #send email - params: subject, message, from email, to email
          send_mail(
             category + '/' + message_email ,
             message,
+       
             message_email,
             ['florenciafoos212@gmail.com'],
             fail_silently = True
