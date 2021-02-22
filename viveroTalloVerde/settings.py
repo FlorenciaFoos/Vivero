@@ -25,7 +25,7 @@ SECRET_KEY = 'mo&m4=wm^*qj5rqk+!nsj745$uuuz237lzi#_h6c*q7x26-v#z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://viverotalloverde.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['viverotalloverde.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
