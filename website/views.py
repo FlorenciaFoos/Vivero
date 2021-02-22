@@ -1,5 +1,11 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from .models import Producto, Categoria
+from django.http import HttpResponse
+from django.template import loader
+from django.views.generic.list import ListView 
+
+
 
 ##paso la peticion, template, contexto
 def home(request):
@@ -28,3 +34,17 @@ def contact(request):
 
 def nosotros(request):
     return render(request, 'nosotros.html', {})
+
+
+
+def categoria(request, CategoriaId):
+    return HttpResponse("You're looking at question %s." % question_id)
+
+ 
+
+
+class ProductosList(ListView): 
+    #para la vista 'explorar'
+    #template = producto_list.html
+    model = Producto 
+   
