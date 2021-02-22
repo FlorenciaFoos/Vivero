@@ -43,24 +43,25 @@
     <main>
 
 
+
         <div class='grilla'>
             <!-- Iterate over object_list -->
             {% for object in object_list %}
             <!-- Display Objects -->
-            <div>
-                <h3>{{ object.ProductoNombre }}</h3>
-                <span>{{ object.ProductoPrecio }}</span>
-                <span>{{ object.ProductoCategoria }}</span>
-                <img>{{ object.ProductoImagen }}</img>
+            <div class="item-container">
+                <h3 class="item-title">{{ object.ProductoNombre }}</h3>
+                <span>${{ object.ProductoPrecio }}</span>
+                <p>{{ object.ProductoCategoria }}</p>
+
+                <!-- <img src="media/{{ object.ProductoImagen }}" alt="imagen de {{ object.ProductoNombre }}"> -->
             </div>
 
 
             <!-- If objet_list is empty  -->
             {% empty %}
-            <li>No se encontraron productos</li>
+            <p>No se encontraron productos</p>
             {% endfor %}
         </div>
-
 
     </main>
 

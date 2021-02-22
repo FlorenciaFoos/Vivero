@@ -11,6 +11,13 @@ from django.views.generic.list import ListView
 def home(request):
     return render(request, 'home.html', {})
 
+
+class Home(ListView): 
+    #para la vista 'home'
+    model = Categoria 
+    template_name = 'website/home.html'
+
+
 def contact(request):
     if request.method == 'POST':
          message_name = request.POST['name']
@@ -37,14 +44,21 @@ def nosotros(request):
 
 
 
-def categoria(request, CategoriaId):
-    return HttpResponse("You're looking at question %s." % question_id)
-
+ 
  
 
 
 class ProductosList(ListView): 
-    #para la vista 'explorar'
+    #para la vista 'explorar/id'
     #template = producto_list.html
     model = Producto 
-   
+    template_name = 'website/producto_list.html'
+
+ 
+class ProductosFiltradosList(ListView): 
+    #para la vista 'explorar/id'
+    #template = producto_list.html
+    model = Producto 
+    template_name = 'website/producto_list.html'
+    def get_queryset(self):
+        return Producto.objects.filter(ProductoCategoria=self.kwargs['category_id'])
