@@ -7,11 +7,6 @@ from django.views.generic.list import ListView
 
 
 
-##paso la peticion, template, contexto
-def home(request):
-    return render(request, 'home.html', {})
-
-
 class Home(ListView): 
     #para la vista 'home'
     model = Categoria 
@@ -34,13 +29,13 @@ def contact(request):
             ['florenciafoos212@gmail.com'],
             fail_silently = True
          )
-         return render(request, 'contact.html', {'message_name': message_name})
+         return render(request, 'website/contact.html', {'message_name': message_name})
     else:    
-        return render(request, 'contact.html', {})
+        return render(request, 'website/contact.html', {})
 
 
 def nosotros(request):
-    return render(request, 'nosotros.html', {})
+    return render(request, 'website/nosotros.html', {})
 
 
 
