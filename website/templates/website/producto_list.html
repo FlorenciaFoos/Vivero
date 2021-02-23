@@ -19,16 +19,21 @@
 
 
 
-        <div class='grilla'>
+        <section class='grilla'>
             <!-- Iterate over object_list -->
             {% for object in object_list %}
             <!-- Display Objects -->
             <div class="item-container">
+
                 <h3 class="item-title">{{ object.ProductoNombre }}</h3>
                 <span>${{ object.ProductoPrecio }}</span>
                 <p>{{ object.ProductoCategoria }}</p>
+                <figure class="img-media">
+                    <img src="/media/{{ object.ProductoImagen }}" alt="{{ object.ProductoNombre }}">
+                </figure>
 
-                <!-- <img src="media/{{ object.ProductoImagen }}" alt="imagen de {{ object.ProductoNombre }}"> -->
+
+
             </div>
 
 
@@ -36,7 +41,7 @@
             {% empty %}
             <p>No se encontraron productos</p>
             {% endfor %}
-        </div>
+        </section>
 
     </main>
 
