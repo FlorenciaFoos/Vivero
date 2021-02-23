@@ -103,7 +103,7 @@ a, a:hover, a:focus{
   .grilla{
     display: grid;
     margin: 6rem;
-    grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     grid-gap: 1rem;
 }  
 
