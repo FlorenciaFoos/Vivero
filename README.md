@@ -5,4 +5,4 @@ Django
 HTML , CSS
 PostgreSQL DB
 
-Se puede en ver: https://viverotalloverde.herokuapp.com/
+Deploy en: https://viverotalloverde.herokuapp.com/
