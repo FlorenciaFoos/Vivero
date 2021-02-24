@@ -2,8 +2,8 @@
  
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
  
- 
-
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 .header{
     background-image: url(../img/fondo-header.jpg);
     background-position: center;
@@ -15,8 +15,8 @@
 }
 
 .btn-info, .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-primary{
-    background-color: black!important;
-    border-color: black!important;
+    background-color:#b51e06!important;
+    border-color: #b51e06!important;
     padding: 1rem 2rem 1rem 2rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -39,13 +39,20 @@
     background-size: cover;
 }
 
+.btn-explorar:hover, .btn-explorar:focus{
+    transform: scale(1.1);
+ 
+}
+ 
+ 
+ 
 .text-box, .text-background{
     background-color:rgba(255,255,255,0.85);
 }
 
 
 .footer  {
-	background-color: #000000;
+	background-color: #b51e06;
     margin-top: 50px;
 	width: 100%;
 }
@@ -75,6 +82,11 @@
 }
 
  
+form{
+    display: flex;
+    flex-direction: column;
+}
+
 label{
     font-weight: bold;
 }
@@ -124,6 +136,10 @@ justify-content: space-between;
 
 .item-title{
     font-size: 1.50rem;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 1rem;
+    font-weight: 600;
 }
 
 .text-background{
@@ -132,3 +148,64 @@ justify-content: space-between;
  align-items: center;
  width: 100%;
 }
+
+
+h3, h1{
+    font-family: 'Homemade Apple', cursive;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.btn-primary,.btn-contacto{
+ background-color: white!important;
+ border: #b51e06 solid 2px;
+ color:#b51e06;
+}
+
+
+.btn-contacto{
+    align-self: flex-end;
+}
+
+.pulse:hover {
+    color:#b51e06;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    box-shadow: 5px 5px #ffc10780;
+    }
+    @-webkit-keyframes pulse {
+    0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    }
+    100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    }
+    @keyframes pulse {
+    0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    }
+    100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    } 
+  
+    
