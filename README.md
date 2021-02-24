@@ -14,9 +14,17 @@ Deploy en: https://viverotalloverde.herokuapp.com/
 Descarga del proyecto a través de git clone o ZIP
 
 Setear un entorno con virtualenv y pip
+# Creacion de entorno virtual
 $ python -m venv 'nombre del entorno'
+
 $ virtual/scripts/activate
-$ pip install requirements.txt
+
+# Install requirements
+pip install -r requirements.txt
+
+# Hacer las migraciones correspondientes
 $ cd projectname/
 $ python manage.py migrate
+
+# Start the development server
 $ python manage.py runserver
