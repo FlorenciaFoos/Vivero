@@ -51,7 +51,7 @@
             {% for object in object_list %}
 
             <div class="card">
-                <img src="media/{{ object.CategoriaImagen }}" class="card-img-top" alt="imagen planta">
+                <img src="{{ object.CategoriaImagen }}" class="card-img-top" alt="{{ object.CategoriaNombre }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ object.CategoriaNombre }}</h5>
 
